@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+using namespace std;
+vector <long long int> kaprekarNumbers(int p,int q) {
+    int i,j;
+    vector <long long int> sum1;
+    for(i=p;i<=q;i++)
+    {
+       long long int sum=0; 
+         long long int x=(long long int)i*i;
+        string x1=to_string(i);
+      long long int len=x1.length();
+          long long int x2=pow(10,len);
+           long long int l=x%x2;
+          long long int r=x/x2;
+        sum=l+r;
+        if(sum==i)
+        {
+        sum1.push_back(i);
+        }
+    }
+   if(sum1.size()==0)
+    {       
+       cout<<"INVALID RANGE";
+   }  
+    return sum1;
+}
+int main() {
+    int p;
+    cin >> p;
+   int q;
+    cin >> q;
+    vector <long long int> result = kaprekarNumbers(p, q);
+    for (ssize_t i = 0; i < result.size(); i++) {
+        cout << result[i] << (i != result.size() - 1 ? " " : "");
+    }
+    cout << endl;
+    return 0;
+}
