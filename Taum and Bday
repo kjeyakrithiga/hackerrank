@@ -1,0 +1,64 @@
+#include <map>
+#include <set>
+#include <list>
+#include <cmath>
+#include <ctime>
+#include <deque>
+#include <queue>
+#include <stack>
+#include <string>
+#include <bitset>
+#include <cstdio>
+#include <limits>
+#include <vector>
+#include <climits>
+#include <cstring>
+#include <cstdlib>
+#include <fstream>
+#include <numeric>
+#include <sstream>
+#include <iostream>
+#include <algorithm>
+#include <unordered_map>
+using namespace std;
+int main(){
+    int t;
+    cin >> t;
+    for(int a0 = 0; a0 < t; a0++){
+        long b;
+        long w;
+        cin >> b >> w;
+        long x;
+        long y;
+        long z;
+        long cost=0;
+        cin >> x >> y >> z;
+        if(x<=z&&y<=z)
+        {
+            cost=b*x+w*y;
+        }
+        else 
+        {
+            if(x>y)
+            {
+                 int n=y+z;
+                if(n>x)
+                {
+                cost=b*x+w*y;
+                }
+                else
+                    cost=b*n+w*y;
+            }
+            else
+            {
+                int n=x+z;
+                if(n>y)
+                cost=b*x+w*y;
+                else
+                    cost=b*x+w*n;
+            }
+        }
+        cout<<cost<<endl;
+    }
+    return 0;
+}
