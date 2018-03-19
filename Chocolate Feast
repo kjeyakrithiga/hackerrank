@@ -1,0 +1,27 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main(){
+    int t;
+    cin >> t;
+    for(int a0 = 0; a0 < t; a0++){
+        int n;
+        int c;
+        int m;
+        cin >> n >> c >> m;
+        int to,w;
+        to=n/c;
+        w=n/c;
+       while(w>=m)
+       {
+           to=to+w/m;
+           w=(w/m)+(w%m);
+       }
+        cout<<to<<endl;
+    }
+    return 0;
+}
