@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int howManyGames(int p, int d, int m, int s) {
+    int i,sum=0,count1=0;
+    i=p;
+    while(sum<=s)
+    {
+        if(i>=m)
+        {
+        sum=sum+i;
+            count1++;
+        }
+        else
+        {
+            count1++;
+        
+            sum=sum+m;
+        }
+        i=i-d;
+    }
+    return count1-1;
+}
+
+int main() {
+    int p;
+    int d;
+    int m;
+    int s;
+    cin >> p >> d >> m >> s;
+    int answer = howManyGames(p, d, m, s);
+    cout << answer << endl;
+    return 0;
+}
