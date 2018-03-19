@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+string encryption(string s) {
+    int i,j,n,m;
+    int l=s.length();
+        int row=floor(sqrt(l));
+    int col=ceil(sqrt(l));
+    for(j=0;j<col;j++)
+    {
+        for(i=j;i<l;i+=col)
+        {
+            cout<<s[i];
+        }
+        cout<<" ";
+    }
+    return 0;
+}
+int main() {
+    string s;
+    cin >> s;
+    encryption(s);
+    return 0;
+}
